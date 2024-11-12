@@ -1,0 +1,19 @@
+Veri setimizde çeşitli özellikler (örneğin, CRIM, ZN, INDUS gibi) ve tahmin etmek istediğimiz MEDV (fiyat) değeri mevcut. Bu veri setindeki özellikler çok farklı aralıklarda olduğu için ölçekleme yaparak hepsini daha benzer bir aralığa çekmek modelin daha tutarlı sonuç vermesini sağlayacaktır. Şimdi, veri setini MinMaxScaler ve StandardScaler kullanarak örnekleyeceğim.
+
+### 1. MinMaxScaler ile Normalleştirme
+MinMaxScaler kullanarak tüm değerleri 0 ile 1 arasına çekeceğiz.
+
+### 2. StandardScaler ile Standartlaştırma
+StandardScaler kullanarak tüm özellikleri ortalaması 0 ve standart sapması 1 olacak şekilde ölçeklendireceğiz.
+
+Örnekleri görelim:
+
+Comparison_of_Scaling_Methods.csv içerisinde örnekleri görebilirsiniz
+
+Veri setinin orijinal, MinMaxScaler ile normalleştirilmiş ve StandardScaler ile standartlaştırılmış halini karşılaştırdığınızda, her özellik için farklı ölçeklerde değerler görebilirsiniz:
+
+- **Normalleştirme (MinMaxScaler)** ile her özelliğin değeri 0 ile 1 arasında olacak şekilde ölçeklenmiştir. Bu, veriyi daha dar bir aralığa çekerek modelin farklı özelliklere eşit şekilde odaklanmasını sağlar.
+
+- **Standartlaştırma (StandardScaler)** ile her özelliğin ortalaması 0 ve standart sapması 1 olacak şekilde dönüştürülmüştür. Bu yöntem, özellikle normal dağılıma yakın verilerde etkilidir ve değişkenler arasındaki farkları modelin daha iyi öğrenmesini sağlar.
+
+Bu ölçekleme işlemlerinin ardından, **scaler.pkl** dosyasına eğitimde kullanılan ölçekleyici model kaydedilebilir. Tahmin sırasında yeni verileri de aynı ölçekle işleyerek tutarlı tahminler elde edebilirsiniz.
